@@ -1,0 +1,130 @@
+/**********************************/
+/*             COMMON             */
+/**********************************/
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #3f51b5;
+}
+
+.cercle_blanc {
+  position: relative;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cercle_blanc:before {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background: #ebebeb;
+  position: absolute;
+  bottom: 12px;
+  left: -50%;
+  -webkit-transform: translateX(-87px);
+          transform: translateX(-87px);
+}
+
+.cercle_blanc:after {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background: #ebebeb;
+  position: absolute;
+  bottom: 12px;
+  right: -50%;
+  -webkit-transform: translateX(87px);
+          transform: translateX(87px);
+}
+
+span.point {
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #3f51b5;
+  top: 5px;
+  right: 5px;
+}
+
+main {
+  margin-top: 56px;
+}
+
+h1, h2, h3, h4, h5, h6, p.lead {
+  font-family: 'Comfortaa', cursive;
+}
+
+h5.h5inline {
+  display: inline;
+}
+
+span.badge {
+  font-family: Roboto,Helvetica,Arial,sans-serif !important;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.bg-splash {
+  background-color: #3f51b5 !important;
+  color: white !important;
+}
+
+.bg-pres {
+  background-color: #293475 !important;
+  color: white !important;
+}
+
+.bg-portf {
+  background-color: #03a9f4 !important;
+  color: white !important;
+}
+
+.btn-outline-primary {
+  background-color: white !important;
+  color: #3f51b5 !important;
+  border: 1px solid #3f51b5 !important;
+}
+
+/**********************************/
+/*               NAV              */
+/**********************************/
+.navbar {
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+/**********************************/
+/*             FOOTER             */
+/**********************************/
+footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .05rem solid #e5e5e5;
+}
+
+footer a {
+  color: #3f51b5 !important;
+}
+
+.fa-coffee {
+  color: brown;
+}
+
+.fa-heart {
+  color: orchid;
+}
+/*# sourceMappingURL=main.css.map */
