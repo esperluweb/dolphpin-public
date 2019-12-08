@@ -9,7 +9,7 @@ class Configuration
 {
     // * Base de données
     public static $adresse_de_host = "localhost";
-    public static $nom_de_la_base = "jupiter";
+    public static $nom_de_la_base = "lebonracoin";
     public static $nom_du_user = "root";
     public static $mot_de_passe = "";
 

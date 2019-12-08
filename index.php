@@ -7,9 +7,9 @@
     include_once("core/Model.php");
     include_once("core/View.php");
 
-    include_once("models/BlogModel.php");
+    include_once("models/AnnonceModel.php");
 
-    include_once("controllers/blogController.php");
+    include_once("controllers/frontController.php");
     include_once("controllers/errorController.php");
 
     use App\Router\Router as Router;
@@ -23,10 +23,8 @@
 
     $router = new Router($_SERVER['REQUEST_URI']);
 
-    $router->get('/', 'blog#blog');
-    $router->get('/test', 'blog#test');
-    $router->get('/michel', 'blog#michel');
-    $router->get('/machin/:id', 'blog#machin')->with('id', '[0-9]+');
+    $router->get('/', 'front#home');
+    // $router->get('/machin/:id', 'blog#machin')->with('id', '[0-9]+');
 
     try
     {
