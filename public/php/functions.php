@@ -15,6 +15,32 @@
 		return (!isset($var) OR is_null($var) OR $var == "") ? true : false;
 	}
 
+	function is_empty($tab)
+	{
+		$result = false;
+		foreach($tab as $t)
+		{
+			$result = (empty($t)) ? true : false;
+		}
+		return $result;
+	}
+
+	function is_connected()
+	{
+		return (!is_empty($_SESSION) && isset($_SESSION['id']) && isset($_SESSION['pseudo'])) ? true : false;
+	}
+
+	function debug($tab = array(), $die = false)
+	{
+		echo "<pre>";
+		foreach($tab as $t)
+		{
+			print_r($t);
+		}
+		echo "</pre>";
+		if($die) die();
+	}
+
 	function slug($string) {
 		return strtolower(trim(preg_replace('~[^0-9a-z]+~i', '-', html_entity_decode(preg_replace('~&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|copy|th|tilde|uml);~i', '$1', htmlentities($string, ENT_QUOTES, 'UTF-8')), ENT_QUOTES, 'UTF-8')), '-'));
 	}
