@@ -1,5 +1,9 @@
 <?php
 
+    session_start();
+
+    include_once("public/php/functions.php");
+
     include_once("core/Configuration.php");
     
     include_once("core/Router.php");
@@ -24,6 +28,8 @@
     $router = new Router($_SERVER['REQUEST_URI']);
 
     $router->get('/', 'front#home');
+    $router->get('/annonces', 'front#annonces');
+    $router->get('/annonce/:id', 'front#annonce')->with('id', '[0-9]+');
     // $router->get('/machin/:id', 'blog#machin')->with('id', '[0-9]+');
 
     try
@@ -32,6 +38,6 @@
     }
     catch(Exception $e)
     {
-        Error::error($e->getMessage());
+        Error::error($e->getMessage(), $e->getCode());
     }
 

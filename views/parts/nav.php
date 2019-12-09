@@ -8,6 +8,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">Accueil</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/annonces">Annonces</a>
+            </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="/blog">Blog</a>
             </li> -->

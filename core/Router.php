@@ -81,7 +81,7 @@ class Router {
                 return $route->call();
             }
         }
-        throw new \Exception('Aucune route ne correspond');
+        throw new \Exception('Aucune route ne correspond', 404);
     }
 
     /**
@@ -94,7 +94,7 @@ class Router {
      */
     public function url($name, $params = []){
         if(!isset($this->namedRoutes[$name])){
-            throw new \Exception('Aucune route ne correspond à ce nom');
+            throw new \Exception('Aucune route ne correspond à ce nom', 404);
         }
         return $this->namedRoutes[$name]->getUrl($params);
     }
