@@ -26,6 +26,17 @@
             }
             return $resultat;
         }
+
+        /**
+         * getLastId()
+         * Permet de retourner l'ID du dernier ajour
+         *
+         * @return integer
+         */
+        protected function getLastId()
+        {
+            return self::getBdd()->lastInsertId ();
+        }
     
         /**
          * getBdd()

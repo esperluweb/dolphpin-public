@@ -12,7 +12,7 @@
         public function home(): void
         {
             $am = new AnnonceModel();
-            $annonces = $am->getAnnonces(3);
+            $annonces = $am->getAnnonces(4);
             $v = new View("Page d'accueil", "layout", "home/home.php");
             $v -> requireView(array('annonces' => $annonces));
         }
