@@ -16,7 +16,7 @@
         <input type="text" name="prix" class="form-control" id="prix" placeholder="167000" required>
     </div>
     <a class="btn btn-warning" onclick="addFields()">Ajouter une photo</a>
-    <button type="submit" class="btn btn-warning">S'inscrire</button>
+    <button type="submit" class="btn btn-warning">Ajouter l'annonce</button>
 </form>
 
 <script type='text/javascript'>

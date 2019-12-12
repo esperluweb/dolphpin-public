@@ -27,6 +27,42 @@
             return $resultat;
         }
 
+        public function read($table, $col=array("*"), $where=array(), $params=NULL, $order=NULL, $sens=NULL, $limit=NULL)
+        {
+            $sql = "SELECT ";
+            if(!vide($col))
+            {
+                $sql .= implode(",", $col);
+            }
+            else
+            {
+                $sql .= "* ";
+            }
+            $sql .= " FROM ".$table;
+            if(!vide($where))
+            {
+                $sql .= " WHERE ";
+                foreach($where as $colonne => $signe):
+                    $sql .= $colonne.$signe."? AND ";
+                endforeach;
+                $sql = substr($sql, 0, -5);
+            }
+            if(!vide($order))
+            {
+                $sql .= "ORDER BY ".$order." ";
+                if(!vide($sens))
+                {
+                    $sql .= $sens." ";
+                }
+            }
+            if(!vide($limit))
+            {
+                $sql .= "LIMIT ".$limit;
+            }
+
+            return $this->executerRequete($sql, $params)->fetchAll();
+        }
+
         /**
          * getLastId()
          * Permet de retourner l'ID du dernier ajour
@@ -55,7 +91,8 @@
                 self::$bdd = new PDO('mysql:host='.$host.';dbname='.$name, $login,
                 $mdp,array(
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
                 ));
             }
             return self::$bdd;

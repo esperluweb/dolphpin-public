@@ -12,7 +12,7 @@
             <?php
                 $photo = explode(",",$a['photos'])[0];
             ?>
-            <img class="card-img-top" src="public/img/annonce/<?= $photo ?>" alt="Photo annonce <? $a['titre'] ?>">
+            <img class="card-img-top" src="public/img/annonce/<?= $photo ?>" alt="Photo annonce <?= $a['titre'] ?>">
             <div class="card-body">
                 <h3 class="card-title"><?= $a['titre'] ?></h3>
                 <h5><?= $a['prix'] ?> € - <?= $a['pseudo'] ?></h5>

@@ -13,6 +13,8 @@
         {
             $am = new AnnonceModel();
             $annonces = $am->getAnnonces(4);
+            // $test = $am -> read("annonce", null, array("id" => "="), array(1));
+            
             $v = new View("Page d'accueil", "layout", "home/home.php");
             $v -> requireView(array('annonces' => $annonces));
         }

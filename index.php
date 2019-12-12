@@ -10,6 +10,7 @@
     include_once("core/Route.php");
     include_once("core/Model.php");
     include_once("core/View.php");
+    include_once("core/Pictures.php");
 
     include_once("models/AnnonceModel.php");
     include_once("models/UtilisateurModel.php");
